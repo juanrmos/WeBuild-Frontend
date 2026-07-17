@@ -1,0 +1,88 @@
+/* WeBuild - Premium Dark Mode & Glassmorphism */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --wb-bg: #0f172a;
+  --wb-text: #f8fafc;
+  --wb-text-muted: #94a3b8;
+  
+  --wb-primary: #3b82f6;
+  --wb-primary-hover: #2563eb;
+  
+  --wb-glass-bg: rgba(30, 41, 59, 0.7);
+  --wb-glass-border: rgba(255, 255, 255, 0.1);
+  --wb-glass-blur: blur(12px);
+  
+  --wb-radius: 12px;
+  --wb-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--wb-bg);
+  color: var(--wb-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--wb-glass-bg);
+  backdrop-filter: var(--wb-glass-blur);
+  -webkit-backdrop-filter: var(--wb-glass-blur);
+  border: 1px solid var(--wb-glass-border);
+  border-radius: var(--wb-radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.wb-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--wb-glass-border);
+  border-radius: 8px;
+  color: var(--wb-text);
+  font-family: 'Inter', sans-serif;
+  transition: var(--wb-transition);
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    border-color: var(--wb-primary);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+  }
+}
+
+.wb-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--wb-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--wb-transition);
+  font-family: 'Inter', sans-serif;
+
+  &:hover {
+    background: var(--wb-primary-hover);
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
